@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
+
+
+@layer base {
+  :root {
+    --bg-dark: #0e100e;
+    --surface-dark: #161815;
+    --surface-raised-dark: #1d201c;
+    --border-dark: rgba(238, 241, 230, 0.1);
+    --text-dark: #f3f3eb;
+    --muted-dark: #9da196;
+    --faint-dark: #666a61;
+    --accent-lime: #c3f36b;
+    --accent-glow: rgba(195, 243, 107, 0.15);
+
+    --bg-light: #f6f6f1;
+    --surface-light: #ffffff;
+    --surface-raised-light: #ecede6;
+    --border-light: rgba(22, 25, 18, 0.12);
+    --text-light: #181a16;
+    --muted-light: #60645a;
+    --faint-light: #888d82;
+  }
+
+  body {
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+.font-mono-code {
+  font-family: 'DM Mono', monospace;
+}
+
+.font-heading {
+  font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif;
+}
+
+/* Agency Technical Grid Background Overlay */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(238, 241, 230, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(238, 241, 230, 0.03) 1px, transparent 1px);
+}
+
+.light .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(22, 25, 18, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(22, 25, 18, 0.04) 1px, transparent 1px);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(22, 24, 21, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0e100e;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #f6f6f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #252823;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c3f36b;
+}
